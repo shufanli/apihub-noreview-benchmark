@@ -1,0 +1,48 @@
+{"event":"phase","ts":"2026-04-01T14:43:05Z","agent":"single","name":"review","action":"start"}
+{"event":"phase","ts":"2026-04-01T14:53:18Z","agent":"single","name":"review","action":"end"}
+{"event":"phase","ts":"2026-04-01T14:53:18Z","agent":"single","name":"test","action":"start"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "positive", "description": "Authenticated user can get their info"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "negative", "description": "Unauthenticated request returns 401"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "negative", "description": "Invalid token returns 401"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "positive", "description": "Logout clears session"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "positive", "description": "Dev login endpoint sets cookie"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "negative", "description": "Dev login with non-existent user 404"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_auth.py", "type": "positive", "description": "Login redirects to GitHub"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "positive", "description": "User can list their API keys"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "Unauthenticated key list returns 401"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "positive", "description": "Create a new API key"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "Create key with empty name fails"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "Create key with no permissions fails"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "Create key with invalid permission fails"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "positive", "description": "User can delete their own key"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "Delete non-existent key returns 404"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_keys.py", "type": "negative", "description": "User cannot delete others key"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Usage summary for pro user"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Free user gets correct plan limit"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "negative", "description": "Usage summary unauthenticated 401"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Get 7-day chart data"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Get 30-day chart data"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Get 90-day chart data"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "negative", "description": "Invalid chart range returns 422"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Get usage logs with pagination"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Filter logs by status class"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_usage.py", "type": "positive", "description": "Search logs by endpoint"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Get current plan info"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "negative", "description": "Current plan unauthenticated 401"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Free user checkout for pro"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "negative", "description": "Cannot checkout free plan"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "negative", "description": "Invalid plan checkout 400"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Pro user can downgrade"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "negative", "description": "Cannot downgrade to higher plan"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "negative", "description": "Downgrade invalid plan 400"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Get invoice list"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Invoice pagination works"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_billing.py", "type": "positive", "description": "Webhook demo mode returns ok"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_pricing.py", "type": "positive", "description": "Public pricing returns all plans"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_pricing.py", "type": "positive", "description": "Pro plan is marked popular"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_pricing.py", "type": "positive", "description": "Each plan has features"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_pricing.py", "type": "positive", "description": "Yearly price less than monthly"}
+{"event": "test_written", "ts": "2026-04-01T14:55:46Z", "file": "tests/test_health.py", "type": "positive", "description": "Health check returns ok"}
+{"event": "bug_found", "ts": "2026-04-01T14:55:46Z", "source": "self", "description": "Parameter name range shadows Python builtin range() causing TypeError in chart endpoint", "severity": "P0", "file": "app/routers/usage.py", "fixed": true}
+{"event": "coverage", "ts": "2026-04-01T14:55:46Z", "lines": 86.0, "branches": 0, "functions": 0, "statements": 86.0}
+{"event":"phase","ts":"2026-04-01T14:55:51Z","agent":"single","name":"test","action":"end"}
