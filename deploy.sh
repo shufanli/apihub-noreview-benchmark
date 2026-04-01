@@ -7,7 +7,9 @@ TENCENT_REGION=ap-hongkong
 TENCENT_INSTANCE_ID=ins-5ee3ymo2
 TCCLI=/Users/shufanli/Library/Python/3.9/bin/tccli
 
-REPO_URL=$(git remote get-url origin)
+# Convert SSH URL to HTTPS for server access
+REPO_URL_RAW=$(git remote get-url origin)
+REPO_URL=$(echo "$REPO_URL_RAW" | sed 's|git@github.com:|https://github.com/|' | sed 's|\.git$||').git
 BRANCH=$(git branch --show-current)
 
 echo "Repo: $REPO_URL, Branch: $BRANCH"
@@ -127,8 +129,7 @@ for i in $(seq 1 60); do
     2>/dev/null | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
-tasks = data['InvocationSet'][0]['InvocationTaskBasicInfoSet']
-print(tasks[0]['InvocationTaskStatus'])
+print(data['InvocationSet'][0]['InvocationStatus'])
 " 2>/dev/null || echo "UNKNOWN")
 
   echo "[$i/60] Status: $STATUS"
