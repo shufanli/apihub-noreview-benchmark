@@ -12,8 +12,9 @@ FROM node:20-slim
 
 WORKDIR /app
 
-# Install Python
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv && \
+# Install minimal Python (no dev tools, no pip bloat)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3-minimal python3-pip && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
@@ -30,7 +31,6 @@ COPY --from=frontend-build /app/frontend/package*.json ./frontend/
 COPY --from=frontend-build /app/frontend/next.config.mjs ./frontend/
 COPY --from=frontend-build /app/frontend/node_modules ./frontend/node_modules
 
-# Copy startup script
 COPY start.sh ./
 RUN chmod +x start.sh
 
