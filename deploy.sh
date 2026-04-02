@@ -113,7 +113,7 @@ INVOCATION_ID=$($TCCLI tat RunCommand \
   --Content "$(echo "$DEPLOY_SCRIPT" | base64)" \
   --CommandType "SHELL" \
   --InstanceIds "[\"$TENCENT_INSTANCE_ID\"]" \
-  --Timeout 600 \
+  --Timeout 900 \
   --Username "root" \
   --WorkingDirectory "/root" \
   2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)['InvocationId'])")

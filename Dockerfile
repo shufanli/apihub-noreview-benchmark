@@ -8,19 +8,17 @@ ENV NEXT_PUBLIC_API_URL=""
 ENV NEXT_PUBLIC_BASE_PATH="/apihubnoreview"
 RUN npm run build
 
-FROM python:3.11-slim
+FROM node:20-slim
 
 WORKDIR /app
 
-# Install Node.js for running Next.js
-RUN apt-get update && apt-get install -y curl && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -y nodejs && \
+# Install Python
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY backend/requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
 # Copy backend
 COPY backend/ ./backend/

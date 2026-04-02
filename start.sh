@@ -6,7 +6,7 @@ export DATABASE_PATH=${DATABASE_PATH:-"/app/data/apihub.db"}
 
 # Start backend on port 8000
 cd /app/backend
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 &
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 &
 
 # Start frontend on port 8080 (main port)
 cd /app/frontend
